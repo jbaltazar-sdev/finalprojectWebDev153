@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function validateForm() {
+          const phoneNumber = document.getElementById("myPhone").value;
+          const regex = /^\d{3}-\d{3}-\d{4}$/;
+          if (regex.test(phoneNumber)) {
+            return true;
+          } else {
+            alert("Invalid phone number. Please try again");
+            return false;
+          }
+        }
+      </script>
+    <title>Águila Wind Notes</title>
+</head>
+<body>
+    <header>
+        <div id="nav-bar">
+            <img class="logo" src="website-images/eaglelogo.png" alt="logo" />
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="lessons.html">Lessons</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+    <div id="lesson-form__container">
+        <div class="lesson-form-header">
+            <p class="lesson-form-header-text">
+                So you decided to schedule a lesson? Great decision!
+            </p>
+            <p class="lesson-form-paragraph">
+                Our team of music instructors will make sure you have the best 
+                experience in your lessons and get great advice and teachings 
+                from them. Takign lessons from us will definitely make you an
+                unrecognizable player. We will make sure our instructors adjust
+                to your playing level to make sure we can help you with the skills 
+                you still need! I hope you enjoy your time learning with our instructors
+                here at Águila Wind Notes! Never stop learning and always practice!
+            </p>
+            <img src="website-images/eaglelogo.png" alt="logo">
+        </div>
+        <div class="lesson-form">
+            <form method="post" action="https://webdevbasics.net/scripts/demo.php"
+            onsubmit="return validateForm();">
+                <label for="myFName">*First Name:</label>
+                <input type="text" name="myFName" id="myFName" required />
+
+                <label for="myLName">Last Name:</label>
+                <input type="text" name="myLName" id="myLName" />
+
+                <label for="myInstrument">*Instrument Name:</label>
+                <input type="text" name="myInstrument" id="myInstrument" required />
+
+                <label for="myEmail">*E-mail:</label>
+                <input type="text" name="myEmail" id="myEmail" required />
+
+                <label for="myPhone">*Phone:</label>
+                <input type="text" name="myPhone" id="myPhone" minlength="12" maxlength="12" required />
+
+                <label for="myDate">*Lesson Date</label>
+                <input type="date" name="myDate" id="myDate" required /> 
+
+                <label for="myLessonTime">*Time</label>
+                <input type="time" name="myLessonTime" id="myLessonTime" required />
+
+                <label for="myComments">Comments:</label>
+                <textarea name="myComments" id="myComments" rows="2" cols="20"></textarea>
+                <input type="submit" value="Submit" id="mySubmit">
+              </form>
+              <img src="website-images/eaglelogo.png" alt="logo">
+        </div>
+    </div>
+</body>
+</html>
